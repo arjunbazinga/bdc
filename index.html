@@ -1,6 +1,15 @@
 <html>
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-101184475-5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-101184475-5');
+    </script>
 
 
   <meta name=viewport content='width=700'>
@@ -50,6 +59,7 @@
 
         </style>
   <h2>Burns Depression Checklist</h2>
+  Answer all questions.
 <div id="Form"><h3>Thoughts and Feelings</h3><table>
                         <tr>
                             <th >Question</th>
@@ -86,7 +96,7 @@
                             <th>A lot</th>
                             <th>Extremely</th>
                         </tr>
-    <tr><th>Do you have any suicidal thoughts?</th><th><input type="radio" Name="30" id="300"></input></th><th><input type="radio" Name="30" id="301"></input></th><th><input type="radio" Name="30" id="302"></input></th><th><input type="radio" Name="30" id="303"></input></th><th><input type="radio" Name="30" id="304"></input></th></tr><tr><th>Would you like to end your life?</th><th><input type="radio" Name="31" id="310"></input></th><th><input type="radio" Name="31" id="311"></input></th><th><input type="radio" Name="31" id="312"></input></th><th><input type="radio" Name="31" id="313"></input></th><th><input type="radio" Name="31" id="314"></input></th></tr><tr><th>Do you have a plan for harming yourself?</th><th><input type="radio" Name="32" id="320"></input></th><th><input type="radio" Name="32" id="321"></input></th><th><input type="radio" Name="32" id="322"></input></th><th><input type="radio" Name="32" id="323"></input></th><th><input type="radio" Name="32" id="324"></input></th></tr></table><br></div><input type="button" id="ans" value="Calculate Result"><br><br>
+    <tr><th>Do you have any suicidal thoughts?</th><th><input type="radio" Name="30" id="300"></input></th><th><input type="radio" Name="30" id="301"></input></th><th><input type="radio" Name="30" id="302"></input></th><th><input type="radio" Name="30" id="303"></input></th><th><input type="radio" Name="30" id="304"></input></th></tr><tr><th>Would you like to end your life?</th><th><input type="radio" Name="31" id="310"></input></th><th><input type="radio" Name="31" id="311"></input></th><th><input type="radio" Name="31" id="312"></input></th><th><input type="radio" Name="31" id="313"></input></th><th><input type="radio" Name="31" id="314"></input></th></tr><tr><th>Do you have a plan for harming yourself?</th><th><input type="radio" Name="32" id="320"></input></th><th><input type="radio" Name="32" id="321"></input></th><th><input type="radio" Name="32" id="322"></input></th><th><input type="radio" Name="32" id="323"></input></th><th><input type="radio" Name="32" id="324"></input></th></tr></table><br></div>Answer All the questions before you continue.<br><input type="button" id="ans" value="Calculate Result"><br><br>
     <div id="ans_div"><div id="ans_div_value"></div><br>
     <table>
          <tr><th>Level of Depression</th><th>Total Score</th></tr>
@@ -95,7 +105,7 @@
     for (var i in ans) {
     total += ans[i];
     }
-document.getElementById("ans_div_value").innerHTML = "Result : " + total;
+document.getElementById("ans_div_value").innerHTML = "Total : " + total;
  document.getElementById("ans_div").style.display = "block"}
     </script>
 </body>
