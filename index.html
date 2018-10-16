@@ -31,6 +31,9 @@
             background: #fffde8;
             padding: 10px;
             font-family: 'Open Sans', sans-serif;
+            align-items: center;
+            align-content: center;
+            text-align: center;
           
     }
     ::-moz-selection {
@@ -47,9 +50,14 @@
       display: none;
     }
 
+    #Progress {
+      font-size: 75%;
+    }
     table {
-  
-    border-collapse: collapse;
+      width:90%; 
+      border-collapse: collapse;
+      margin-left:5%; 
+      margin-right:5%;
     }
 
     td, th {
@@ -69,15 +77,25 @@
     <div id="Page">
       <h4 id="Section">Thoughts and Feelings</h4>
 
-     <i> <div id="question">1. Feeling sad or down in the dumps</div> </i> 
+      <i>
+        <div id="question">Feeling sad or down in the dumps</div>
+      </i>
       <br>
-      <div>
-        <label><input type="radio" Name="ans" id="0"></input>Not At All</label><br>
-        <label><input type="radio" Name="ans" id="1"></input>Somewhat</label><br>
-        <label><input type="radio" Name="ans" id="2"></input>Moderately</label><br>
-        <label><input type="radio" Name="ans" id="3"></input>A lot</label><br>
-        <label><input type="radio" Name="ans" id="4"></input>Extremely</label><br>
+      <hr>
+      <div id="options">
+        <div id=0>Not At All</div>
+        <hr>
+        <div id=1>Somewhat</div>
+        <hr>
+        <div id=2>Moderately</div>
+        <hr>
+        <div id=3>A lot</div>
+        <hr>
+        <div id=4>Extremely</div>
+        <hr>
       </div>
+      <br>
+      <div id=Progress>1 / 25</div>
       <br>
     </div>
 
@@ -116,7 +134,7 @@
       </table>
       <br>
     </div>
-    
+
     <button type="button" id="back" onclick="back()">Back</button>
 
 
@@ -171,16 +189,16 @@
 
       function next(qans) {
         ans[current] = qans
-        if (current < 25){
+        if (current < 25) {
           current += 1
           draw()
           document.getElementById(qans).checked = false
         }
       }
 
-      function back(){
-        if (current > 0){
-          if (current == 25){
+      function back() {
+        if (current > 0) {
+          if (current == 25) {
             document.getElementById("Page").style.display = "block"
             document.getElementById("Results").style.display = "none"
 
@@ -189,20 +207,21 @@
           draw()
           document.getElementById(ans[current]).checked = true
         }
-        
+
       }
-      
-      function draw(){
+
+      function draw() {
         if (current != 25) {
           var ns_id = getSectionId()
           if (s_id != ns_id) {
             s_id = ns_id
             document.getElementById("Section").innerHTML = ss[s_id]
           }
-          document.getElementById("question").innerHTML = current + 1 + ". " + qs[current]
+          document.getElementById("question").innerHTML = qs[current]
+          document.getElementById("Progress").innerHTML = current + 1 + " / " + 25
           if (current == 0) {
             document.getElementById("back").style.display = "none"
-          }else{
+          } else {
             document.getElementById("back").style.display = "block"
           }
         } else {
