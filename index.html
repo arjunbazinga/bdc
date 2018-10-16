@@ -1,16 +1,17 @@
 <html>
 
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-101184475-5"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-101184475-5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
       gtag('config', 'UA-101184475-5');
     </script>
 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
   <meta name=viewport content='width=700'>
   <meta name="mobile-web-app-capable" content="yes">
@@ -26,21 +27,29 @@
 <body>
   <style>
     body {
-                margin: auto;
-                background: #fffde8;
-                padding: 10px;
-              
-            }
-            ::-moz-selection {
-                background: yellow;
-            }
-            ::selection {
-                background: yellow;
-            }
-    table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
+            margin: auto;
+            background: #fffde8;
+            padding: 10px;
+            font-family: 'Open Sans', sans-serif;
+          
+    }
+    ::-moz-selection {
+          background: yellow;
+    }
+    ::selection {
+        background: yellow;
+    }
 
+    #Results {
+      display: none;
+    }
+    #back {
+      display: none;
+    }
+
+    table {
+  
+    border-collapse: collapse;
     }
 
     td, th {
@@ -52,61 +61,177 @@
     tr:nth-child(even) {
         background-color: #dddddd;
     }
-    #ans_div {
-    display: none;
-    }
-    
 
-        </style>
+  </style>
   <h2>Burns Depression Checklist</h2>
-  Answer all questions.
-<div id="Form"><h3>Thoughts and Feelings</h3><table>
-                        <tr>
-                            <th >Question</th>
-                            <th>Not At All</th>
-                            <th>Somewhat</th> 
-                            <th>Moderately</th>
-                            <th>A lot</th>
-                            <th>Extremely</th>
-                        </tr>
-    <tr><th>Feeling sad or down in the dumps</th><th><input type="radio" Name="00" id="000"></input></th><th><input type="radio" Name="00" id="001"></input></th><th><input type="radio" Name="00" id="002"></input></th><th><input type="radio" Name="00" id="003"></input></th><th><input type="radio" Name="00" id="004"></input></th></tr><tr><th>Feeling unhappy or blue</th><th><input type="radio" Name="01" id="010"></input></th><th><input type="radio" Name="01" id="011"></input></th><th><input type="radio" Name="01" id="012"></input></th><th><input type="radio" Name="01" id="013"></input></th><th><input type="radio" Name="01" id="014"></input></th></tr><tr><th>Crying spells or tearfulness</th><th><input type="radio" Name="02" id="020"></input></th><th><input type="radio" Name="02" id="021"></input></th><th><input type="radio" Name="02" id="022"></input></th><th><input type="radio" Name="02" id="023"></input></th><th><input type="radio" Name="02" id="024"></input></th></tr><tr><th>Feeling discouraged</th><th><input type="radio" Name="03" id="030"></input></th><th><input type="radio" Name="03" id="031"></input></th><th><input type="radio" Name="03" id="032"></input></th><th><input type="radio" Name="03" id="033"></input></th><th><input type="radio" Name="03" id="034"></input></th></tr><tr><th>Feeling hopeless</th><th><input type="radio" Name="04" id="040"></input></th><th><input type="radio" Name="04" id="041"></input></th><th><input type="radio" Name="04" id="042"></input></th><th><input type="radio" Name="04" id="043"></input></th><th><input type="radio" Name="04" id="044"></input></th></tr><tr><th>Low self esteem</th><th><input type="radio" Name="05" id="050"></input></th><th><input type="radio" Name="05" id="051"></input></th><th><input type="radio" Name="05" id="052"></input></th><th><input type="radio" Name="05" id="053"></input></th><th><input type="radio" Name="05" id="054"></input></th></tr><tr><th>Feeling worthless or inadequate</th><th><input type="radio" Name="06" id="060"></input></th><th><input type="radio" Name="06" id="061"></input></th><th><input type="radio" Name="06" id="062"></input></th><th><input type="radio" Name="06" id="063"></input></th><th><input type="radio" Name="06" id="064"></input></th></tr><tr><th>Guilt or shame</th><th><input type="radio" Name="07" id="070"></input></th><th><input type="radio" Name="07" id="071"></input></th><th><input type="radio" Name="07" id="072"></input></th><th><input type="radio" Name="07" id="073"></input></th><th><input type="radio" Name="07" id="074"></input></th></tr><tr><th>Criticizing yourself or blaming other</th><th><input type="radio" Name="08" id="080"></input></th><th><input type="radio" Name="08" id="081"></input></th><th><input type="radio" Name="08" id="082"></input></th><th><input type="radio" Name="08" id="083"></input></th><th><input type="radio" Name="08" id="084"></input></th></tr><tr><th>Difficulty making decisions</th><th><input type="radio" Name="09" id="090"></input></th><th><input type="radio" Name="09" id="091"></input></th><th><input type="radio" Name="09" id="092"></input></th><th><input type="radio" Name="09" id="093"></input></th><th><input type="radio" Name="09" id="094"></input></th></tr></table><br><h3>Activities and Personal Relationships</h3><table>
-                        <tr>
-                            <th >Question</th>
-                            <th>Not At All</th>
-                            <th>Somewhat</th> 
-                            <th>Moderately</th>
-                            <th>A lot</th>
-                            <th>Extremely</th>
-                        </tr>
-    <tr><th>Loss of interest in family, friends or colleagues</th><th><input type="radio" Name="10" id="100"></input></th><th><input type="radio" Name="10" id="101"></input></th><th><input type="radio" Name="10" id="102"></input></th><th><input type="radio" Name="10" id="103"></input></th><th><input type="radio" Name="10" id="104"></input></th></tr><tr><th>Loneliness</th><th><input type="radio" Name="11" id="110"></input></th><th><input type="radio" Name="11" id="111"></input></th><th><input type="radio" Name="11" id="112"></input></th><th><input type="radio" Name="11" id="113"></input></th><th><input type="radio" Name="11" id="114"></input></th></tr><tr><th>Spending less time with family or friends</th><th><input type="radio" Name="12" id="120"></input></th><th><input type="radio" Name="12" id="121"></input></th><th><input type="radio" Name="12" id="122"></input></th><th><input type="radio" Name="12" id="123"></input></th><th><input type="radio" Name="12" id="124"></input></th></tr><tr><th>Loss of motivation</th><th><input type="radio" Name="13" id="130"></input></th><th><input type="radio" Name="13" id="131"></input></th><th><input type="radio" Name="13" id="132"></input></th><th><input type="radio" Name="13" id="133"></input></th><th><input type="radio" Name="13" id="134"></input></th></tr><tr><th>Loss of interest in work or other activities</th><th><input type="radio" Name="14" id="140"></input></th><th><input type="radio" Name="14" id="141"></input></th><th><input type="radio" Name="14" id="142"></input></th><th><input type="radio" Name="14" id="143"></input></th><th><input type="radio" Name="14" id="144"></input></th></tr><tr><th>Avoiding work or other activities</th><th><input type="radio" Name="15" id="150"></input></th><th><input type="radio" Name="15" id="151"></input></th><th><input type="radio" Name="15" id="152"></input></th><th><input type="radio" Name="15" id="153"></input></th><th><input type="radio" Name="15" id="154"></input></th></tr><tr><th>Loss of pleasure or satisfaction in life</th><th><input type="radio" Name="16" id="160"></input></th><th><input type="radio" Name="16" id="161"></input></th><th><input type="radio" Name="16" id="162"></input></th><th><input type="radio" Name="16" id="163"></input></th><th><input type="radio" Name="16" id="164"></input></th></tr></table><br><h3>Physical Symptoms</h3><table>
-                        <tr>
-                            <th >Question</th>
-                            <th>Not At All</th>
-                            <th>Somewhat</th> 
-                            <th>Moderately</th>
-                            <th>A lot</th>
-                            <th>Extremely</th>
-                        </tr>
-    <tr><th>Feeling tired</th><th><input type="radio" Name="20" id="200"></input></th><th><input type="radio" Name="20" id="201"></input></th><th><input type="radio" Name="20" id="202"></input></th><th><input type="radio" Name="20" id="203"></input></th><th><input type="radio" Name="20" id="204"></input></th></tr><tr><th>Difficulty sleeping or sleeping too much</th><th><input type="radio" Name="21" id="210"></input></th><th><input type="radio" Name="21" id="211"></input></th><th><input type="radio" Name="21" id="212"></input></th><th><input type="radio" Name="21" id="213"></input></th><th><input type="radio" Name="21" id="214"></input></th></tr><tr><th>Decreased or increased appetite</th><th><input type="radio" Name="22" id="220"></input></th><th><input type="radio" Name="22" id="221"></input></th><th><input type="radio" Name="22" id="222"></input></th><th><input type="radio" Name="22" id="223"></input></th><th><input type="radio" Name="22" id="224"></input></th></tr><tr><th>Loss of interest in sex</th><th><input type="radio" Name="23" id="230"></input></th><th><input type="radio" Name="23" id="231"></input></th><th><input type="radio" Name="23" id="232"></input></th><th><input type="radio" Name="23" id="233"></input></th><th><input type="radio" Name="23" id="234"></input></th></tr><tr><th>Worrying about your health</th><th><input type="radio" Name="24" id="240"></input></th><th><input type="radio" Name="24" id="241"></input></th><th><input type="radio" Name="24" id="242"></input></th><th><input type="radio" Name="24" id="243"></input></th><th><input type="radio" Name="24" id="244"></input></th></tr></table><br><h3>Suicidal Urges</h3><table>
-                        <tr>
-                            <th >Question</th>
-                            <th>Not At All</th>
-                            <th>Somewhat</th> 
-                            <th>Moderately</th>
-                            <th>A lot</th>
-                            <th>Extremely</th>
-                        </tr>
-    <tr><th>Do you have any suicidal thoughts?</th><th><input type="radio" Name="30" id="300"></input></th><th><input type="radio" Name="30" id="301"></input></th><th><input type="radio" Name="30" id="302"></input></th><th><input type="radio" Name="30" id="303"></input></th><th><input type="radio" Name="30" id="304"></input></th></tr><tr><th>Would you like to end your life?</th><th><input type="radio" Name="31" id="310"></input></th><th><input type="radio" Name="31" id="311"></input></th><th><input type="radio" Name="31" id="312"></input></th><th><input type="radio" Name="31" id="313"></input></th><th><input type="radio" Name="31" id="314"></input></th></tr><tr><th>Do you have a plan for harming yourself?</th><th><input type="radio" Name="32" id="320"></input></th><th><input type="radio" Name="32" id="321"></input></th><th><input type="radio" Name="32" id="322"></input></th><th><input type="radio" Name="32" id="323"></input></th><th><input type="radio" Name="32" id="324"></input></th></tr></table><br></div>Answer All the questions before you continue.<br><input type="button" id="ans" value="Calculate Result"><br><br>
-    <div id="ans_div"><div id="ans_div_value"></div><br>
-    <table>
-         <tr><th>Level of Depression</th><th>Total Score</th></tr>
-         <tr><td>No Depression</td><td>0-5</td></tr><tr><td>Normal but unhappy</td><td>6-10</td></tr><tr><td>Mild depression</td><td>11-25</td></tr><tr><td>Moderate depression</td><td>26-50</td></tr><tr><td>Severe depression</td><td>51-75</td></tr><tr><td>Extreme depression</td><td>76-100</td></tr></table></div><script>ans = {};document.getElementById("000").onclick = function (){ans["00"]=0;};document.getElementById("001").onclick = function (){ans["00"]=1;};document.getElementById("002").onclick = function (){ans["00"]=2;};document.getElementById("003").onclick = function (){ans["00"]=3;};document.getElementById("004").onclick = function (){ans["00"]=4;};document.getElementById("010").onclick = function (){ans["01"]=0;};document.getElementById("011").onclick = function (){ans["01"]=1;};document.getElementById("012").onclick = function (){ans["01"]=2;};document.getElementById("013").onclick = function (){ans["01"]=3;};document.getElementById("014").onclick = function (){ans["01"]=4;};document.getElementById("020").onclick = function (){ans["02"]=0;};document.getElementById("021").onclick = function (){ans["02"]=1;};document.getElementById("022").onclick = function (){ans["02"]=2;};document.getElementById("023").onclick = function (){ans["02"]=3;};document.getElementById("024").onclick = function (){ans["02"]=4;};document.getElementById("030").onclick = function (){ans["03"]=0;};document.getElementById("031").onclick = function (){ans["03"]=1;};document.getElementById("032").onclick = function (){ans["03"]=2;};document.getElementById("033").onclick = function (){ans["03"]=3;};document.getElementById("034").onclick = function (){ans["03"]=4;};document.getElementById("040").onclick = function (){ans["04"]=0;};document.getElementById("041").onclick = function (){ans["04"]=1;};document.getElementById("042").onclick = function (){ans["04"]=2;};document.getElementById("043").onclick = function (){ans["04"]=3;};document.getElementById("044").onclick = function (){ans["04"]=4;};document.getElementById("050").onclick = function (){ans["05"]=0;};document.getElementById("051").onclick = function (){ans["05"]=1;};document.getElementById("052").onclick = function (){ans["05"]=2;};document.getElementById("053").onclick = function (){ans["05"]=3;};document.getElementById("054").onclick = function (){ans["05"]=4;};document.getElementById("060").onclick = function (){ans["06"]=0;};document.getElementById("061").onclick = function (){ans["06"]=1;};document.getElementById("062").onclick = function (){ans["06"]=2;};document.getElementById("063").onclick = function (){ans["06"]=3;};document.getElementById("064").onclick = function (){ans["06"]=4;};document.getElementById("070").onclick = function (){ans["07"]=0;};document.getElementById("071").onclick = function (){ans["07"]=1;};document.getElementById("072").onclick = function (){ans["07"]=2;};document.getElementById("073").onclick = function (){ans["07"]=3;};document.getElementById("074").onclick = function (){ans["07"]=4;};document.getElementById("080").onclick = function (){ans["08"]=0;};document.getElementById("081").onclick = function (){ans["08"]=1;};document.getElementById("082").onclick = function (){ans["08"]=2;};document.getElementById("083").onclick = function (){ans["08"]=3;};document.getElementById("084").onclick = function (){ans["08"]=4;};document.getElementById("090").onclick = function (){ans["09"]=0;};document.getElementById("091").onclick = function (){ans["09"]=1;};document.getElementById("092").onclick = function (){ans["09"]=2;};document.getElementById("093").onclick = function (){ans["09"]=3;};document.getElementById("094").onclick = function (){ans["09"]=4;};document.getElementById("100").onclick = function (){ans["10"]=0;};document.getElementById("101").onclick = function (){ans["10"]=1;};document.getElementById("102").onclick = function (){ans["10"]=2;};document.getElementById("103").onclick = function (){ans["10"]=3;};document.getElementById("104").onclick = function (){ans["10"]=4;};document.getElementById("110").onclick = function (){ans["11"]=0;};document.getElementById("111").onclick = function (){ans["11"]=1;};document.getElementById("112").onclick = function (){ans["11"]=2;};document.getElementById("113").onclick = function (){ans["11"]=3;};document.getElementById("114").onclick = function (){ans["11"]=4;};document.getElementById("120").onclick = function (){ans["12"]=0;};document.getElementById("121").onclick = function (){ans["12"]=1;};document.getElementById("122").onclick = function (){ans["12"]=2;};document.getElementById("123").onclick = function (){ans["12"]=3;};document.getElementById("124").onclick = function (){ans["12"]=4;};document.getElementById("130").onclick = function (){ans["13"]=0;};document.getElementById("131").onclick = function (){ans["13"]=1;};document.getElementById("132").onclick = function (){ans["13"]=2;};document.getElementById("133").onclick = function (){ans["13"]=3;};document.getElementById("134").onclick = function (){ans["13"]=4;};document.getElementById("140").onclick = function (){ans["14"]=0;};document.getElementById("141").onclick = function (){ans["14"]=1;};document.getElementById("142").onclick = function (){ans["14"]=2;};document.getElementById("143").onclick = function (){ans["14"]=3;};document.getElementById("144").onclick = function (){ans["14"]=4;};document.getElementById("150").onclick = function (){ans["15"]=0;};document.getElementById("151").onclick = function (){ans["15"]=1;};document.getElementById("152").onclick = function (){ans["15"]=2;};document.getElementById("153").onclick = function (){ans["15"]=3;};document.getElementById("154").onclick = function (){ans["15"]=4;};document.getElementById("160").onclick = function (){ans["16"]=0;};document.getElementById("161").onclick = function (){ans["16"]=1;};document.getElementById("162").onclick = function (){ans["16"]=2;};document.getElementById("163").onclick = function (){ans["16"]=3;};document.getElementById("164").onclick = function (){ans["16"]=4;};document.getElementById("200").onclick = function (){ans["20"]=0;};document.getElementById("201").onclick = function (){ans["20"]=1;};document.getElementById("202").onclick = function (){ans["20"]=2;};document.getElementById("203").onclick = function (){ans["20"]=3;};document.getElementById("204").onclick = function (){ans["20"]=4;};document.getElementById("210").onclick = function (){ans["21"]=0;};document.getElementById("211").onclick = function (){ans["21"]=1;};document.getElementById("212").onclick = function (){ans["21"]=2;};document.getElementById("213").onclick = function (){ans["21"]=3;};document.getElementById("214").onclick = function (){ans["21"]=4;};document.getElementById("220").onclick = function (){ans["22"]=0;};document.getElementById("221").onclick = function (){ans["22"]=1;};document.getElementById("222").onclick = function (){ans["22"]=2;};document.getElementById("223").onclick = function (){ans["22"]=3;};document.getElementById("224").onclick = function (){ans["22"]=4;};document.getElementById("230").onclick = function (){ans["23"]=0;};document.getElementById("231").onclick = function (){ans["23"]=1;};document.getElementById("232").onclick = function (){ans["23"]=2;};document.getElementById("233").onclick = function (){ans["23"]=3;};document.getElementById("234").onclick = function (){ans["23"]=4;};document.getElementById("240").onclick = function (){ans["24"]=0;};document.getElementById("241").onclick = function (){ans["24"]=1;};document.getElementById("242").onclick = function (){ans["24"]=2;};document.getElementById("243").onclick = function (){ans["24"]=3;};document.getElementById("244").onclick = function (){ans["24"]=4;};document.getElementById("300").onclick = function (){ans["30"]=0;};document.getElementById("301").onclick = function (){ans["30"]=1;};document.getElementById("302").onclick = function (){ans["30"]=2;};document.getElementById("303").onclick = function (){ans["30"]=3;};document.getElementById("304").onclick = function (){ans["30"]=4;};document.getElementById("310").onclick = function (){ans["31"]=0;};document.getElementById("311").onclick = function (){ans["31"]=1;};document.getElementById("312").onclick = function (){ans["31"]=2;};document.getElementById("313").onclick = function (){ans["31"]=3;};document.getElementById("314").onclick = function (){ans["31"]=4;};document.getElementById("320").onclick = function (){ans["32"]=0;};document.getElementById("321").onclick = function (){ans["32"]=1;};document.getElementById("322").onclick = function (){ans["32"]=2;};document.getElementById("323").onclick = function (){ans["32"]=3;};document.getElementById("324").onclick = function (){ans["32"]=4;}; document.getElementById("ans").onclick = function (){
-    var total = 0;
-    for (var i in ans) {
-    total += ans[i];
-    }
-document.getElementById("ans_div_value").innerHTML = "Total : " + total;
- document.getElementById("ans_div").style.display = "block"}
+  <div id="Form">
+
+    <div id="Page">
+      <h4 id="Section">Thoughts and Feelings</h4>
+
+     <i> <div id="question">1. Feeling sad or down in the dumps</div> </i> 
+      <br>
+      <div>
+        <label><input type="radio" Name="ans" id="0"></input>Not At All</label><br>
+        <label><input type="radio" Name="ans" id="1"></input>Somewhat</label><br>
+        <label><input type="radio" Name="ans" id="2"></input>Moderately</label><br>
+        <label><input type="radio" Name="ans" id="3"></input>A lot</label><br>
+        <label><input type="radio" Name="ans" id="4"></input>Extremely</label><br>
+      </div>
+      <br>
+    </div>
+
+    <div id="Results">
+      <div id="Score"></div>
+      <br>
+      <table>
+        <tr>
+          <th>Level of Depression</th>
+          <th>Total Score</th>
+        </tr>
+        <tr>
+          <td>No Depression</td>
+          <td>0-5</td>
+        </tr>
+        <tr>
+          <td>Normal but unhappy</td>
+          <td>6-10</td>
+        </tr>
+        <tr>
+          <td>Mild depression</td>
+          <td>11-25</td>
+        </tr>
+        <tr>
+          <td>Moderate depression</td>
+          <td>26-50</td>
+        </tr>
+        <tr>
+          <td>Severe depression</td>
+          <td>51-75</td>
+        </tr>
+        <tr>
+          <td>Extreme depression</td>
+          <td>76-100</td>
+        </tr>
+      </table>
+      <br>
+    </div>
+    
+    <button type="button" id="back" onclick="back()">Back</button>
+
+
+    <script>
+      var current = 0
+      var s_id = 0;
+      var ans = {}
+      var qs = ['Feeling sad or down in the dumps',
+        'Feeling unhappy or blue',
+        'Crying spells or tearfulness',
+        'Feeling discouraged',
+        'Feeling hopeless',
+        'Low self esteem',
+        'Feeling worthless or inadequate',
+        'Guilt or shame',
+        'Criticizing yourself or blaming other',
+        'Difficulty making decisions',
+        'Loss of interest in family, friends or colleagues',
+        'Loneliness',
+        'Spending less time with family or friends',
+        'Loss of motivation',
+        'Loss of interest in work or other activities',
+        'Avoiding work or other activities',
+        'Loss of pleasure or satisfaction in life',
+        'Feeling tired',
+        'Difficulty sleeping or sleeping too much',
+        'Decreased or increased appetite',
+        'Loss of interest in sex',
+        'Worrying about your health',
+        'Do you have any suicidal thoughts?',
+        'Would you like to end your life?',
+        'Do you have a plan for harming yourself?'
+      ]
+      ss = ['Thoughts and Feelings',
+        'Activities and Personal Relationships',
+        'Physical Symptoms',
+        'Suicidal Urges'
+      ]
+
+      function getSectionId() {
+        if (current < 10) {
+          return 0
+        }
+        if (current < 17) {
+          return 1
+        }
+        if (current < 22) {
+          return 2
+        }
+        return 3
+      }
+
+      function next(qans) {
+        ans[current] = qans
+        if (current < 25){
+          current += 1
+          draw()
+          document.getElementById(qans).checked = false
+        }
+      }
+
+      function back(){
+        if (current > 0){
+          if (current == 25){
+            document.getElementById("Page").style.display = "block"
+            document.getElementById("Results").style.display = "none"
+
+          }
+          current -= 1
+          draw()
+          document.getElementById(ans[current]).checked = true
+        }
+        
+      }
+      
+      function draw(){
+        if (current != 25) {
+          var ns_id = getSectionId()
+          if (s_id != ns_id) {
+            s_id = ns_id
+            document.getElementById("Section").innerHTML = ss[s_id]
+          }
+          document.getElementById("question").innerHTML = current + 1 + ". " + qs[current]
+          if (current == 0) {
+            document.getElementById("back").style.display = "none"
+          }else{
+            document.getElementById("back").style.display = "block"
+          }
+        } else {
+          var total = 0;
+          for (var i in ans) {
+            total += ans[i];
+          }
+          document.getElementById("Score").innerHTML = "Total : " + total;
+          document.getElementById("Page").style.display = "none"
+          document.getElementById("Results").style.display = "block"
+        }
+
+      }
+
+      document.getElementById("0").onclick = function () {
+        next(0)
+      }
+      document.getElementById("1").onclick = function () {
+        next(1)
+      }
+      document.getElementById("2").onclick = function () {
+        next(2)
+      }
+      document.getElementById("3").onclick = function () {
+        next(3)
+      }
+      document.getElementById("4").onclick = function () {
+        next(4)
+      }
     </script>
 </body>
 
