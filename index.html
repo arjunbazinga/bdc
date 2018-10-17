@@ -31,8 +31,8 @@
   <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
   <link rel="shortcut icon big" sizes="192x192" href="images/icons-192.png ">
 
-  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" >
-  <link rel="icon"  type="image/x-icon" href="images/favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 
   <link rel="apple-touch-icon" sizes="57x57" href="images/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="images/apple-icon-60x60.png">
@@ -53,60 +53,63 @@
 
 <body>
   <style>
-   
     body {
-            margin: auto;
-            background: #fffde8;
-            padding: 10px;
-            font-family: 'Open Sans', sans-serif;
-            align-items: center;
-            align-content: center;
-            text-align: center;
-          
+      margin: auto;
+      background: #fffde8;
+     
+      padding: 10px;
+      font-family: 'Open Sans', sans-serif;
+      align-items: center;
+      align-content: center;
+      text-align: center;
+
     }
+
     ::-moz-selection {
-          background: yellow;
+      background: yellow;
     }
+
     ::selection {
-        background: yellow;
+      background: yellow;
     }
 
-    #Results {
-      display: none;
-    }
-    #back {
+    #results, #back, #next {
       display: none;
     }
 
-    #Progress {
+    #question {
+      font-style: italic;
+    }
+
+    #progress {
       font-size: 75%;
     }
+
     table {
-      width:90%; 
+      width: 90%;
       border-collapse: collapse;
-      margin-left:5%; 
-      margin-right:5%;
+      margin-left: 5%;
+      margin-right: 5%;
     }
 
-    td, th {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
+    td,
+    th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
     }
 
     tr:nth-child(even) {
-        background-color: #dddddd;
+      background-color: #dddddd;
     }
-
+  
   </style>
   <h2>Burns Depression Checklist</h2>
 
-  <div id="Page">
-    <h4 id="Section">Thoughts and Feelings</h4>
+  <div id="page">
+    <h4 id="category">Thoughts and Feelings</h4>
 
-    <i>
-      <div id="question">Feeling sad or down in the dumps</div>
-    </i>
+    <div id="question">Feeling sad or down in the dumps</div>
     <br>
     <hr>
     <div id="options">
@@ -122,12 +125,12 @@
       <hr>
     </div>
     <br>
-    <div id=Progress>1 / 25</div>
+    <div id=progress>1 / 25</div>
     <br>
   </div>
 
-  <div id="Results">
-    <div id="Score"></div>
+  <div id="results">
+    <div id="score"></div>
     <br>
     <table>
       <tr>
@@ -162,7 +165,12 @@
     <br>
   </div>
 
-  <button type="button" id="back" onclick="back()">Back</button>
+  <div id="navigation">
+      <input type="button" id="back" onclick="back_handler()" value="Back"></input>
+      <input type="button" id="next" onclick="next_handler()" value="Next"></input>
+  </div>
+  
+
 
 
   <script>
@@ -201,7 +209,7 @@
       'Suicidal Urges'
     ]
 
-    function getSectionId() {
+    function getcategoryId() {
       if (current < 10) {
         return 0
       }
@@ -214,69 +222,155 @@
       return 3
     }
 
-    function next(qans) {
-      ans[current] = qans
+    function hide(e) {
+      var t = document.getElementById(e)
+      if (t.style.display != "none") {
+        t.style.display = "none"
+      }
+    }
+
+    function show(e) {
+      var t = document.getElementById(e)
+      if (t.style.display != "block") {
+        t.style.display = "block"
+      }
+    }
+
+    function select(e) {
+      var t = document.getElementById(e)
+      if (t.style.background != "#e7e6d3") {
+        t.style.background = "#e7e6d3"
+      }
+    }
+
+    function unselect(e) {
+      var t = document.getElementById(e)
+      if (t.style.background != "#fffde8") {
+        t.style.background = "#fffde8"
+      }
+    }
+
+    function next_handler(qans) {
       if (current < 25) {
         current += 1
         draw()
-        document.getElementById(qans).checked = false
       }
     }
 
-    function back() {
+
+    function back_handler() {
       if (current > 0) {
         if (current == 25) {
-          document.getElementById("Page").style.display = "block"
-          document.getElementById("Results").style.display = "none"
-
+          show("page")
+          hide("results")
         }
         current -= 1
         draw()
-        document.getElementById(ans[current]).checked = true
       }
-
     }
 
-    function draw() {
-      if (current != 25) {
-        var ns_id = getSectionId()
-        if (s_id != ns_id) {
-          s_id = ns_id
-          document.getElementById("Section").innerHTML = ss[s_id]
-        }
-        document.getElementById("question").innerHTML = qs[current]
-        document.getElementById("Progress").innerHTML = current + 1 + " / " + 25
-        if (current == 0) {
-          document.getElementById("back").style.display = "none"
-        } else {
-          document.getElementById("back").style.display = "block"
-        }
-      } else {
-        var total = 0;
-        for (var i in ans) {
-          total += ans[i];
-        }
-        document.getElementById("Score").innerHTML = "Total : " + total;
-        document.getElementById("Page").style.display = "none"
-        document.getElementById("Results").style.display = "block"
-      }
 
+    function Category() {
+      var ns_id = getcategoryId()
+      if (s_id != ns_id) {
+        s_id = ns_id
+        document.getElementById("category").innerHTML = ss[s_id]
+      }
+    }
+
+    function Options() {
+      if (!(ans[current] === undefined)) {
+        var t = ans[current]
+        console.log(t)
+        for (i = 0; i < 5; i++) {
+          if (t == i) {
+            select(i)
+          } else {
+            unselect(i)
+          }
+        }
+
+      }
+    }
+
+    function Question() {
+      document.getElementById("question").innerHTML = qs[current]
+    }
+
+
+    function Progress() {
+      document.getElementById("progress").innerHTML = current + 1 + " / " + 25
+    }
+
+
+    function Back() {
+      if (current == 0) {
+        hide("back")
+      } else {
+        show("back")
+      }
+    }
+
+    function Next() {
+      if (ans[current] === undefined) {
+        hide("next")
+      } else {
+        show("next")
+      }
+    }
+
+
+    function calculate_total() {
+      var total = 0;
+      for (var i in ans) {
+        total += ans[i];
+      }
+      return total
+    }
+
+
+    function Score() {
+      document.getElementById("score").innerHTML = "Total : " + calculate_total();
+    }
+
+
+    function draw() {
+      Back()
+      Next()
+      if (current != 25) {
+        Category()
+        Question()
+        Progress()
+        Options()
+        show("page")
+        hide("results")
+
+      } else {
+        Score()
+        hide("page")
+        show("results")
+      }
     }
 
     document.getElementById("0").onclick = function () {
-      next(0)
+      ans[current] = 0
+      next_handler()
     }
     document.getElementById("1").onclick = function () {
-      next(1)
+      ans[current] = 1
+      next_handler()
     }
     document.getElementById("2").onclick = function () {
-      next(2)
+      ans[current] = 2
+      next_handler()
     }
     document.getElementById("3").onclick = function () {
-      next(3)
+      ans[current] = 3
+      next_handler()
     }
     document.getElementById("4").onclick = function () {
-      next(4)
+      ans[current] = 4
+      next_handler()
     }
   </script>
 
