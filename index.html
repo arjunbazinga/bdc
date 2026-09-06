@@ -2,378 +2,247 @@
 <html lang="en">
 
 <head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-101184475-5"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Burns Depression Checklist</title>
 
-      gtag('config', 'UA-101184475-5');
-    </script>
+  <meta name="description"
+    content="A private, offline-friendly version of the Burns Depression Checklist. 25 questions, an instant score, and what that score means. Inspired by Feeling Good by David D. Burns.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f6f4ee" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#101318" media="(prefers-color-scheme: dark)">
 
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Burns Depression Checklist">
+  <meta property="og:description"
+    content="A private, offline-friendly self-assessment. 25 questions, an instant score, and what that score means.">
+  <meta property="og:image" content="images/icons-512.png">
+  <meta name="twitter:card" content="summary">
 
   <meta name="mobile-web-app-capable" content="yes">
-  <meta name="theme-color" content="#fffde8">
-  <meta name="viewport" content="width=device-width,  initial-scale=1">
-
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="HandheldFriendly" content="true">
   <meta name="apple-mobile-web-app-capable" content="yes">
-
-  <meta name="Description" content="Burn's Depression checklist,
-  Website by arjunbazinga, Inspired by the book Feeling Good by David D. Burns">
+  <meta name="apple-mobile-web-app-title" content="BDC">
+  <meta name="HandheldFriendly" content="true">
 
   <link rel="manifest" href="manifest.json">
-
-  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
-  <link rel="shortcut icon big" sizes="192x192" href="images/icons-192.png ">
-
-  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
-  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-
-  <link rel="apple-touch-icon" sizes="57x57" href="images/apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="images/apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="images/apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="images/apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="images/apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="images/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="images/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="images/android-icon-192x192.png">
+  <link rel="icon" href="images/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/android-icon-192x192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-icon-180x180.png">
 
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('bdc.theme');
+        var theme = stored || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.dataset.theme = theme;
+      } catch (err) { /* localStorage unavailable */ }
+    }());
+  </script>
 </head>
-<Title>Burn's Depression Checklist</Title>
 
 <body>
-  <style>
-    body {
-      margin: auto;
-      background: #fffde8;
-     
-      padding: 10px;
-      font-family: 'Open Sans', sans-serif;
-      align-items: center;
-      align-content: center;
-      text-align: center;
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    }
-
-    ::-moz-selection {
-      background: yellow;
-    }
-
-    ::selection {
-      background: yellow;
-    }
-
-    #results, #back, #next {
-      display: none;
-    }
-
-    #question {
-      font-style: italic;
-    }
-
-    #progress {
-      font-size: 75%;
-    }
-
-    table {
-      width: 90%;
-      border-collapse: collapse;
-      margin-left: 5%;
-      margin-right: 5%;
-    }
-
-    td,
-    th {
-      border: 1px solid #dddddd;
-      text-align: left;
-      padding: 8px;
-    }
-
-    tr:nth-child(even) {
-      background-color: #dddddd;
-    }
-  
-  </style>
-  <h2>Burns Depression Checklist</h2>
-
-  <div id="page">
-    <h4 id="category">Thoughts and Feelings</h4>
-
-    <div id="question">Feeling sad or down in the dumps</div>
-    <br>
-    <hr>
-    <div id="options">
-      <div id=0>Not At All</div>
-      <hr>
-      <div id=1>Somewhat</div>
-      <hr>
-      <div id=2>Moderately</div>
-      <hr>
-      <div id=3>A lot</div>
-      <hr>
-      <div id=4>Extremely</div>
-      <hr>
+  <header class="topbar">
+    <div class="brand">
+      <img class="brand__mark" src="images/favicon-96x96.png" alt="" width="36" height="36">
+      <span class="brand__text">
+        <span class="brand__title">Burns Depression Checklist</span>
+        <span class="brand__sub">Stays on your device</span>
+      </span>
     </div>
-    <br>
-    <div id=progress>1 / 25</div>
-    <br>
-  </div>
 
-  <div id="results">
-    <div id="score"></div>
-    <br>
-    <table>
-      <tr>
-        <th>Level of Depression</th>
-        <th>Total Score</th>
-      </tr>
-      <tr>
-        <td>No Depression</td>
-        <td>0-5</td>
-      </tr>
-      <tr>
-        <td>Normal but unhappy</td>
-        <td>6-10</td>
-      </tr>
-      <tr>
-        <td>Mild depression</td>
-        <td>11-25</td>
-      </tr>
-      <tr>
-        <td>Moderate depression</td>
-        <td>26-50</td>
-      </tr>
-      <tr>
-        <td>Severe depression</td>
-        <td>51-75</td>
-      </tr>
-      <tr>
-        <td>Extreme depression</td>
-        <td>76-100</td>
-      </tr>
-    </table>
-    <br>
-  </div>
+    <button class="icon-button" id="theme-toggle" type="button" aria-live="polite">
+      <svg class="icon icon--sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <circle cx="12" cy="12" r="4.2" />
+        <path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4 17 7M7 17l-1.6 1.6" />
+      </svg>
+      <svg class="icon icon--moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M20 14.2A8.4 8.4 0 1 1 9.8 4a6.8 6.8 0 0 0 10.2 10.2Z" />
+      </svg>
+      <span class="icon-button__label" id="theme-toggle-label">Switch to dark theme</span>
+    </button>
+  </header>
 
-  <div id="navigation">
-      <input type="button" id="back" onclick="back_handler()" value="Back"></input>
-      <input type="button" id="next" onclick="next_handler()" value="Next"></input>
-  </div>
-  
+  <main id="main">
 
+    <!-- ───────────────────────── Intro ───────────────────────── -->
+    <section class="view" id="view-intro" aria-labelledby="intro-title">
+      <div class="card card--intro">
+        <p class="eyebrow">Self-assessment</p>
+        <h1 id="intro-title">How have you been feeling this past week?</h1>
+        <p class="lede">
+          The Burns Depression Checklist is a 25-item questionnaire from
+          <cite>Feeling Good</cite> by David D. Burns. It takes about three minutes and gives you a
+          score out of 100 that you can track over time.
+        </p>
 
+        <ul class="facts">
+          <li class="fact">
+            <span class="fact__value">25</span>
+            <span class="fact__label">questions</span>
+          </li>
+          <li class="fact">
+            <span class="fact__value">~3</span>
+            <span class="fact__label">minutes</span>
+          </li>
+          <li class="fact">
+            <span class="fact__value">0</span>
+            <span class="fact__label">data sent anywhere</span>
+          </li>
+        </ul>
 
-  <script>
-    var current = 0
-    var s_id = 0;
-    var ans = {}
-    var qs = ['Feeling sad or down in the dumps',
-      'Feeling unhappy or blue',
-      'Crying spells or tearfulness',
-      'Feeling discouraged',
-      'Feeling hopeless',
-      'Low self esteem',
-      'Feeling worthless or inadequate',
-      'Guilt or shame',
-      'Criticizing yourself or blaming other',
-      'Difficulty making decisions',
-      'Loss of interest in family, friends or colleagues',
-      'Loneliness',
-      'Spending less time with family or friends',
-      'Loss of motivation',
-      'Loss of interest in work or other activities',
-      'Avoiding work or other activities',
-      'Loss of pleasure or satisfaction in life',
-      'Feeling tired',
-      'Difficulty sleeping or sleeping too much',
-      'Decreased or increased appetite',
-      'Loss of interest in sex',
-      'Worrying about your health',
-      'Do you have any suicidal thoughts?',
-      'Would you like to end your life?',
-      'Do you have a plan for harming yourself?'
-    ]
-    ss = ['Thoughts and Feelings',
-      'Activities and Personal Relationships',
-      'Physical Symptoms',
-      'Suicidal Urges'
-    ]
+        <div class="actions actions--start">
+          <button class="button button--primary" id="btn-start" type="button">Start the checklist</button>
+          <button class="button button--ghost" id="btn-resume" type="button" hidden>
+            Resume <span class="button__meta" id="resume-meta"></span>
+          </button>
+        </div>
 
-    function getcategoryId() {
-      if (current < 10) {
-        return 0
-      }
-      if (current < 17) {
-        return 1
-      }
-      if (current < 22) {
-        return 2
-      }
-      return 3
-    }
+        <p class="note">
+          Answers are saved in this browser only, so you can close the tab and pick up where you left off.
+        </p>
+      </div>
 
-    function hide(e) {
-      var t = document.getElementById(e)
-      if (t.style.display != "none") {
-        t.style.display = "none"
-      }
-    }
+      <aside class="card card--muted disclaimer">
+        <h2 class="disclaimer__title">Before you begin</h2>
+        <p>
+          This is a screening tool, not a diagnosis. A score here cannot tell you whether you have
+          depression — only a doctor or therapist can do that. If your score is high, or it worries you,
+          please treat that as a reason to talk to someone qualified.
+        </p>
+        <p class="disclaimer__urgent">
+          If you are thinking about harming yourself, please reach out now — you can
+          <a href="https://findahelpline.com" target="_blank" rel="noopener noreferrer">find a helpline in your
+            country</a>.
+        </p>
+      </aside>
+    </section>
 
-    function show(e) {
-      var t = document.getElementById(e)
-      if (t.style.display != "block") {
-        t.style.display = "block"
-      }
-    }
+    <!-- ───────────────────────── Quiz ───────────────────────── -->
+    <section class="view" id="view-quiz" aria-labelledby="question-text" hidden>
+      <div class="card card--quiz">
+        <div class="quiz__head">
+          <p class="chip" id="category">Thoughts and Feelings</p>
+          <p class="counter"><span id="counter-current">1</span><span class="counter__total"> / 25</span></p>
+        </div>
 
-    function select(e) {
-      var t = document.getElementById(e)
-      if (t.style.background != "#e7e6d3") {
-        t.style.background = "#e7e6d3"
-      }
-    }
+        <div class="progress" role="progressbar" aria-label="Checklist progress" aria-valuemin="0" aria-valuemax="25"
+          aria-valuenow="1">
+          <span class="progress__fill" id="progress-fill"></span>
+        </div>
 
-    function unselect(e) {
-      var t = document.getElementById(e)
-      if (t.style.background != "#fffde8") {
-        t.style.background = "#fffde8"
-      }
-    }
+        <fieldset class="question">
+          <legend class="question__legend">
+            <span class="question__eyebrow">Over the past week, how much have you been bothered by…</span>
+            <span class="question__text" id="question-text">Feeling sad or down in the dumps</span>
+          </legend>
+          <div class="options" id="options"></div>
+        </fieldset>
 
-    function next_handler(qans) {
-      if (current < 25) {
-        current += 1
-        draw()
-      }
-    }
+        <p class="section-note" id="section-note" hidden>
+          These last few questions are heavier. Answer them honestly — and if any of them ring true,
+          <a href="https://findahelpline.com" target="_blank" rel="noopener noreferrer">talk to someone today</a>.
+        </p>
 
+        <div class="actions">
+          <button class="button button--ghost" id="btn-back" type="button">Back</button>
+          <button class="button button--primary" id="btn-next" type="button" disabled>Next</button>
+        </div>
+      </div>
 
-    function back_handler() {
-      if (current > 0) {
-        if (current == 25) {
-          show("page")
-          hide("results")
-        }
-        current -= 1
-        draw()
-      }
-    }
+      <p class="keyboard-hint">
+        <kbd>1</kbd>–<kbd>5</kbd> to answer · <kbd>&larr;</kbd> <kbd>&rarr;</kbd> to move between questions
+      </p>
+    </section>
 
+    <!-- ─────────────────────── Results ─────────────────────── -->
+    <section class="view" id="view-results" aria-labelledby="results-title" hidden>
+      <div class="card card--crisis" id="crisis" hidden>
+        <h2 class="crisis__title">Please talk to someone today</h2>
+        <p>
+          You said you have been having thoughts of suicide. That is more than a number on a scale, and you
+          do not have to sit with it alone. Reaching out is not an overreaction.
+        </p>
+        <ul class="crisis__list">
+          <li><a href="https://findahelpline.com" target="_blank" rel="noopener noreferrer">findahelpline.com</a> —
+            free, confidential helplines in 100+ countries</li>
+          <li><strong>India:</strong> Tele-MANAS <a href="tel:14416">14416</a></li>
+          <li><strong>US:</strong> Suicide &amp; Crisis Lifeline <a href="tel:988">988</a></li>
+          <li><strong>UK &amp; Ireland:</strong> Samaritans <a href="tel:116123">116 123</a></li>
+        </ul>
+        <p class="crisis__foot">If you are in immediate danger, please call your local emergency number.</p>
+      </div>
 
-    function Category() {
-      var ns_id = getcategoryId()
-      if (s_id != ns_id) {
-        s_id = ns_id
-        document.getElementById("category").innerHTML = ss[s_id]
-      }
-    }
+      <div class="card card--score">
+        <p class="eyebrow" id="results-title">Your result</p>
 
-    function Options() {
-      if (!(ans[current] === undefined)) {
-        var t = ans[current]
-        console.log(t)
-        for (i = 0; i < 5; i++) {
-          if (t == i) {
-            select(i)
-          } else {
-            unselect(i)
-          }
-        }
+        <p class="score">
+          <span class="score__value" id="score-value">0</span>
+          <span class="score__max">/ 100</span>
+        </p>
+        <p class="score__band" id="score-band">No depression</p>
+        <p class="score__blurb" id="score-blurb"></p>
 
-      }
-    }
+        <div class="gauge">
+          <div class="gauge__track" id="gauge-track"></div>
+          <div class="gauge__marker" id="gauge-marker">
+            <span class="gauge__marker-dot"></span>
+          </div>
+          <div class="gauge__scale" aria-hidden="true"><span>0</span><span>50</span><span>100</span></div>
+        </div>
+      </div>
 
-    function Question() {
-      document.getElementById("question").innerHTML = qs[current]
-    }
+      <div class="card">
+        <h2 class="card__title">Where your score sits</h2>
+        <div class="table-wrap">
+          <table class="bands">
+            <thead>
+              <tr>
+                <th scope="col">Level</th>
+                <th scope="col">Score</th>
+              </tr>
+            </thead>
+            <tbody id="bands-body"></tbody>
+          </table>
+        </div>
+      </div>
 
+      <div class="card">
+        <h2 class="card__title">By category</h2>
+        <ul class="breakdown" id="breakdown"></ul>
+      </div>
 
-    function Progress() {
-      document.getElementById("progress").innerHTML = current + 1 + " / " + 25
-    }
+      <div class="card card--muted">
+        <h2 class="card__title">What to do with this</h2>
+        <p>
+          A single score is a snapshot, not a verdict — mood moves around. What is useful is the trend: retake
+          the checklist in a week or two and compare. If your score stays in the moderate range or higher, or
+          it drops sharply, that is worth bringing to a doctor or therapist.
+        </p>
+        <div class="actions">
+          <button class="button button--primary" id="btn-copy" type="button">Copy my results</button>
+          <button class="button button--ghost" id="btn-review" type="button">Review answers</button>
+          <button class="button button--ghost" id="btn-restart" type="button">Start over</button>
+        </div>
+        <p class="note" id="copy-status" role="status" aria-live="polite"></p>
+      </div>
+    </section>
 
+  </main>
 
-    function Back() {
-      if (current == 0) {
-        hide("back")
-      } else {
-        show("back")
-      }
-    }
+  <footer class="footer">
+    <p>
+      Questionnaire from <cite>Feeling Good</cite> by David D. Burns. Not a diagnostic instrument.
+    </p>
+    <p>
+      <a href="https://github.com/arjunbazinga/bdc" target="_blank" rel="noopener noreferrer">Source on GitHub</a>
+    </p>
+  </footer>
 
-    function Next() {
-      if (ans[current] === undefined) {
-        hide("next")
-      } else {
-        show("next")
-      }
-    }
-
-
-    function calculate_total() {
-      var total = 0;
-      for (var i in ans) {
-        total += ans[i];
-      }
-      return total
-    }
-
-
-    function Score() {
-      document.getElementById("score").innerHTML = "Total : " + calculate_total();
-    }
-
-
-    function draw() {
-      Back()
-      Next()
-      if (current != 25) {
-        Category()
-        Question()
-        Progress()
-        Options()
-        show("page")
-        hide("results")
-
-      } else {
-        Score()
-        hide("page")
-        show("results")
-      }
-    }
-
-    document.getElementById("0").onclick = function () {
-      ans[current] = 0
-      next_handler()
-    }
-    document.getElementById("1").onclick = function () {
-      ans[current] = 1
-      next_handler()
-    }
-    document.getElementById("2").onclick = function () {
-      ans[current] = 2
-      next_handler()
-    }
-    document.getElementById("3").onclick = function () {
-      ans[current] = 3
-      next_handler()
-    }
-    document.getElementById("4").onclick = function () {
-      ans[current] = 4
-      next_handler()
-    }
-  </script>
-
+  <script src="app.js" defer></script>
 </body>
 
 </html>

@@ -1,20 +1,34 @@
 {
   "short_name": "BDC",
-  "name": "Burn's Depression Checklist",
+  "name": "Burns Depression Checklist",
+  "description": "A private, offline-friendly version of the Burns Depression Checklist: 25 questions, an instant score, and what that score means.",
   "icons": [
     {
       "src": "images/icons-192.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "purpose": "any"
     },
     {
       "src": "images/icons-512.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "purpose": "any"
+    },
+    {
+      "src": "images/icons-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
     }
   ],
-  "background_color": "#fffde8",
+  "background_color": "#f4f2ea",
+  "theme_color": "#f4f2ea",
   "display": "standalone",
-  "theme_color": "#fffde8",
+  "orientation": "portrait-primary",
+  "categories": ["health", "medical", "lifestyle"],
+  "lang": "en",
+  "dir": "ltr",
+  "scope": ".",
   "start_url": "."
 }
